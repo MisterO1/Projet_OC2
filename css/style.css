@@ -1,3 +1,4 @@
+
 /****** General ***********/
 * {
     font-family: 'Raleway', sans-serif;
@@ -12,6 +13,7 @@
 html, body {
     overflow-x: hidden;
     width: 100%;
+    margin :0;
 }
 .fa-solid {
     color: var(--main-color);
@@ -74,16 +76,16 @@ header{
     justify-content: space-between;
     box-sizing: border-box;
     /* border: 1px solid rgb(17, 0, 255); */
-    min-height: 80px;
+    height: 80px;
 }
-.logo {
+.box-logo {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     /* border: 1px solid red; */
 }
-.logo img{
+.box-logo img{
     width: 61px;
     height: 19px;
     cursor: pointer;
@@ -102,27 +104,14 @@ header{
     align-items: flex-end;
     justify-content: center;
     height: 35px;
+    border-top: 2px solid #fff;
     position: relative;
+    width: 105px;
     /* border: 1px solid red; */
 }
 .title:hover{
-    color: #0065FC;
-}
-.title.active{
-    /* border-top: 2px solid #0065FC; */
-    color: #0065FC;
-}
-.title .bar{
-    display: none;
-    height: 2px;
-    width: 100%;
-    background-color: #0065FC;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.title.active .bar {
-    display: block;
+    color: var(--main-color);
+    border-top: 2px solid var(--main-color);
 }
 
 /********************* MAIN *******************************/
@@ -150,7 +139,7 @@ header{
     align-items: center;
 }
 .location-icon{
-    background-color: #F2F2F2;
+    background-color: var(--main-bg-color);
     width: 50px;
     height: 50px;
     border: none;
@@ -159,7 +148,7 @@ header{
     justify-content: center;
     align-items: center;
 }
-.location-content{
+.location-input{
     text-align: center;
     width: var(--search-width);
     height: 50px;
@@ -168,9 +157,10 @@ header{
     padding: 0;
     font-weight: 700;
     font-size: 18px;
+    border: 1px solid var(--filter-bg-color);
 }
 .btn-search{
-    background-color: #0065FC;
+    background-color: var(--main-color);
     padding: 15px 16px;
     height: 50px;
     color: white;
@@ -218,8 +208,9 @@ header{
     cursor: pointer;
 }
 .filter:hover{
-    background-color: #DEEBFF;
+    background-color: var(--filter-bg-color);
 }
+
 /******** info-bar **********/
 .info-bar{
     display: flex;
@@ -229,7 +220,7 @@ header{
 }
 .box-icon{
     position: relative;
-    border: 1px solid #DEEBFF;
+    border: 1px solid var(--filter-bg-color);
     border-radius: 50%;
     width: 24px;
     height: 24px;
@@ -390,7 +381,7 @@ header{
 /************************ FOOTER **************************/
 footer {
     display: flex;
-    background-color: #F2F2F2;
+    background-color: var(--main-bg-color);
     box-sizing: border-box;
 }
 footer div {
@@ -479,9 +470,6 @@ footer li {
 /*************** Small devices (phones, less than 768px) ***************/
 @media (min-width: 320px) and (max-width: 767px) {
     /* general */
-    body {
-        margin: 0;
-    }
     .main-container {
         padding: 0;
     }
@@ -489,12 +477,11 @@ footer li {
     /* HEADER */
     header {
         flex-direction: column;
+        height: 115px;
     }
-    header div{
+    .box-logo {
         width: 100%;
-    }
-    .logo {
-        height: 80px;
+        padding: 30px 0;
     }
     .titles{
         width: 100%;
@@ -503,9 +490,11 @@ footer li {
     .title {
         width: 50%;
         align-items: flex-start;
+        border-bottom: 2px solid #fff;
     }
-    .title.active .bar {
-        top: 100%;
+    .title:hover{
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid var(--main-color);
     }
     /* MAIN */
     /* searching */
@@ -513,8 +502,10 @@ footer li {
         padding: 0 20px;
     }
     /* location */
-    .location-content{
-        width: calc(var(--search-width) + 80px);
+    .location-input{
+        /* width: calc(var(--search-width) + 80px); */
+        width: 100%;
+        margin-right: -20px;
     }
     .btn-search{
         border-top-left-radius: 15px;
